@@ -7,6 +7,8 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.text}>Hello world!!!</Text>
       <StatusBar style="auto" />
+      <View style={styles.landing}>
+      </View>
     </View>
   );
 }
@@ -20,5 +22,11 @@ const styles = StyleSheet.create({
   },
   text: {
     color: 'ghostwhite',
+  },
+  landing: {
+    backgroundColor: 'plum',
+    color: 'ghostwhite',
+    width: 250,
+    height: 100,
   }
 });
