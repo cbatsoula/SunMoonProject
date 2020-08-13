@@ -14,7 +14,8 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    fetch(`https://api.worldweatheronline.com/premium/v1/astronomy.ashx?q=11230&date=today&key=${process.env.REACT_APP_WORLD_WEATHER}&format=json`)
+    const WORLD_WEATHER = process.env.REACT_APP_WORLD_WEATHER;
+    fetch(`https://api.worldweatheronline.com/premium/v1/astronomy.ashx?q=11230&date=today&key=${WORLD_WEATHER}&format=json`)
      .then( r => r.json() )
      .then( data => {
        console.log("here it is:", data)
