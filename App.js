@@ -4,9 +4,26 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default class App extends Component {
 
+  state = {
+    zipcode: 11230,
+    weatherData: null,
+  }
+
   _onPressButton() {
   alert('You tapped the button!')
   }
+
+  componentDidMount() {
+    fetch(`https://api.worldweatheronline.com/premium/v1/astronomy.ashx?q=11230&date=today&key=${process.env.REACT_APP_WORLD_WEATHER}&format=json`)
+     .then( r => r.json() )
+     .then( data => {
+       console.log("here it is:", data)
+       this.setState({
+         weatherData: data,
+       })
+     })
+  }
+
 
   render () {
     return (
