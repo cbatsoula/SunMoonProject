@@ -29,6 +29,7 @@ export default class App extends Component {
   render () {
     return (
       <View style={styles.container}>
+      <View style={styles.star} />
       <StatusBar style="auto" />
         <Button
       onPress={this._onPressButton}
@@ -36,14 +37,14 @@ export default class App extends Component {
       <View style={styles.landing}>
         <Text style={styles.text}>Hello world!!!</Text>
         <Text style={styles.text}>Hello world!!!</Text>
+        <View style={styles.star} />
       </View>
 
-      <View style={styles.starfive}>
-        <TriangleUp style={styles.starfiveTop} />
+      <View style={styles.star} />
+      <View style={styles.star} />
+      <View style={styles.star} />
 
-        <View style={styles.starfiveBefore} />
-        <View style={styles.starfiveAfter} />
-        </View>
+
       </View>
     );
 
@@ -70,6 +71,24 @@ const styles = StyleSheet.create({
     borderRadius: 250/2,
 
   },
+  star: {
+    height: 3,
+    width: 3,
+    backgroundColor: 'yellow',
+    zIndex: 1,
+    borderRadius: 3/2,
+  },
+
+
+
+
+
+
+
+
+
+
+
 starfive: {
   width: 150,
   height: 150,
