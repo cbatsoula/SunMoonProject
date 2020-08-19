@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
+import { LinearGradient } from 'expo';
 
 export default class App extends Component {
 
@@ -29,6 +30,17 @@ export default class App extends Component {
   render () {
     return (
       <View style={styles.container}>
+      <LinearGradient
+        // Background Linear Gradient
+        colors={['rgba(0,0,0,0.8)', 'transparent']}
+        style={{
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: 0,
+          height: 300,
+        }}
+        />
       <View style={styles.star} />
       <StatusBar style="auto" />
         <Button
@@ -55,13 +67,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'firebrick',
+
     alignItems: 'center',
     justifyContent: 'center',
+    flex: 2,
   },
   text: {
     color: 'ghostwhite',
     margin: 30,
     padding: 10,
+
   },
   landing: {
     backgroundColor: 'plum',
@@ -70,6 +85,7 @@ const styles = StyleSheet.create({
     height: 250,
     borderRadius: 250/2,
 
+
   },
   star: {
     height: 3,
@@ -77,6 +93,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow',
     zIndex: 1,
     borderRadius: 3/2,
+    margin: 5,
   },
 
 
