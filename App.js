@@ -29,9 +29,9 @@ export default class App extends Component {
 
   render () {
     return (
-      <View style={styles.container}>
+      
       <LinearGradient style={styles.lG}
-        colors={['#4c669f', '#3b5998', '#192f6a']}>
+        colors={['#4c669f', 'darkviolet', 'darkslategrey']}>
       <View style={styles.star} />
       <StatusBar style="auto" />
         <Button
@@ -48,7 +48,7 @@ export default class App extends Component {
       <View style={styles.star} />
 
       </LinearGradient>
-      </View>
+
     );
 
   }
@@ -72,11 +72,12 @@ const styles = StyleSheet.create({
 
   },
   landing: {
-    backgroundColor: 'plum',
+    backgroundColor: 'firebrick',
     color: 'ghostwhite',
     width: 250,
     height: 250,
     borderRadius: 250/2,
+    margin: 90,
 
 
   },
