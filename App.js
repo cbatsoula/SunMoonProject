@@ -31,7 +31,7 @@ export default class App extends Component {
     return (
 
       <LinearGradient style={styles.lG}
-        colors={['#4c669f', 'darkviolet', 'darkslategrey']}>
+        colors={['cornflowerblue', 'darkorchid', 'darkslategrey']}>
       <View style={styles.star} />
       <StatusBar style="auto" />
         <Button
