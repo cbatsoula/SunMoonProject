@@ -29,7 +29,7 @@ export default class App extends Component {
 
   render () {
     return (
-      
+
       <LinearGradient style={styles.lG}
         colors={['#4c669f', 'darkviolet', 'darkslategrey']}>
       <View style={styles.star} />
@@ -38,8 +38,8 @@ export default class App extends Component {
       onPress={this._onPressButton}
       title="yea"/>
       <View style={styles.landing}>
-        <Text style={styles.text}>Hello world!!!</Text>
-        <Text style={styles.text}>Hello world!!!</Text>
+        <Text style={styles.text}>LOG IN</Text>
+        <Text style={styles.text}>SIGN UP</Text>
         <View style={styles.star} />
       </View>
 
@@ -74,10 +74,14 @@ const styles = StyleSheet.create({
   landing: {
     backgroundColor: 'firebrick',
     color: 'ghostwhite',
-    width: 250,
-    height: 250,
-    borderRadius: 250/2,
-    margin: 90,
+    width: 200,
+    height: 200,
+    borderRadius: 200/2,
+    margin: 100,
+    marginTop: 230,
+    alignItems: 'center',
+    justifyContent: 'center',
+
 
 
   },
