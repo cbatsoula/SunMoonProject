@@ -30,7 +30,8 @@ export default class App extends Component {
   render () {
     return (
       <View style={styles.container}>
-      <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
+      <LinearGradient style={styles.lG}
+        colors={['#4c669f', '#3b5998', '#192f6a']}>
       <View style={styles.star} />
       <StatusBar style="auto" />
         <Button
@@ -79,6 +80,11 @@ const styles = StyleSheet.create({
 
 
   },
+  lG: {
+    flex: 3,
+    alignSelf: "stretch",
+  },
+
   star: {
     height: 3,
     width: 3,
