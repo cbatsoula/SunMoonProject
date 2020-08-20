@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Animated, Button, StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export default class App extends Component {
@@ -8,11 +8,29 @@ export default class App extends Component {
   state = {
     zipcode: 11230,
     weatherData: null,
+    fadeAnim: new Animated.Value(0),
   }
 
   _onPressButton() {
   alert('You tapped the button!')
   }
+
+  fadeIn = () => {
+  // Will change fadeAnim value to 1 in 5 seconds
+  Animated.timing(this.state.fadeAnim, {
+    toValue: 1,
+    duration: 5000
+  }).start();
+  };
+
+  fadeOut = () => {
+    // Will change fadeAnim value to 0 in 5 seconds
+    Animated.timing(this.state.fadeAnim, {
+      toValue: 0,
+      duration: 5000
+    }).start();
+  };
+
 
   componentDidMount() {
     const WORLD_WEATHER = process.env.REACT_APP_WORLD_WEATHER;
@@ -33,6 +51,21 @@ export default class App extends Component {
       <LinearGradient style={styles.lG}
         colors={['cornflowerblue', 'darkorchid', 'darkslategrey']}>
       <View style={styles.starLeft} />
+
+      <Animated.View
+        style={[
+          styles.fadingContainer,
+          {
+            opacity: this.state.fadeAnim // Bind opacity to animated value
+          }
+        ]}
+      >
+        <Text style={styles.fadingText}>Fading View!</Text>
+      </Animated.View>
+      <View style={styles.buttonRow}>
+        <Button title="Fade In" onPress={this.fadeIn} />
+        <Button title="Fade Out" onPress={this.fadeOut} />
+      </View>
 
       <View style={styles.starRight} />
       <View style={styles.landing}>
@@ -175,5 +208,23 @@ triangleUp: {
   borderLeftColor: 'transparent',
   borderRightColor: 'transparent',
   borderBottomColor: 'red'
-}
+},
+
+
+
+
+fadingContainer: {
+  paddingVertical: 8,
+  paddingHorizontal: 16,
+  backgroundColor: "powderblue"
+},
+fadingText: {
+  fontSize: 28,
+  textAlign: "center",
+  margin: 10
+},
+buttonRow: {
+  flexDirection: "row",
+  marginVertical: 16
+},
 });
