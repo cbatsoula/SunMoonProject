@@ -32,20 +32,25 @@ export default class App extends Component {
 
       <LinearGradient style={styles.lG}
         colors={['cornflowerblue', 'darkorchid', 'darkslategrey']}>
-      <View style={styles.star} />
-      <StatusBar style="auto" />
-        <Button
-      onPress={this._onPressButton}
-      title="yea"/>
+      <View style={styles.starLeft} />
+
+      <View style={styles.starRight} />
       <View style={styles.landing}>
-        <Text style={styles.text}>LOG IN</Text>
-        <Text style={styles.text}>SIGN UP</Text>
-        <View style={styles.star} />
+        <Button
+          style={styles.button}
+          color='firebrick'
+          onPress={this._onPressButton}
+          title="LOG IN"/>
+        <Button
+          style={styles.button}
+          color='firebrick'
+          onPress={this._onPressButton}
+          title="SIGN UP"/>
       </View>
 
-      <View style={styles.star} />
-      <View style={styles.star} />
-      <View style={styles.star} />
+      <View style={styles.starRight} />
+      <View style={styles.starLeft} />
+      <View style={styles.starRight} />
 
       </LinearGradient>
 
@@ -89,14 +94,21 @@ const styles = StyleSheet.create({
     flex: 3,
     alignSelf: "stretch",
   },
-
-  star: {
+  starLeft: {
     height: 3,
     width: 3,
-    backgroundColor: 'yellow',
+    backgroundColor: 'tomato',
     zIndex: 1,
     borderRadius: 3/2,
     margin: 5,
+  },
+  starRight: {
+    height: 3,
+    width: 3,
+    backgroundColor: 'ghostwhite',
+    zIndex: 1,
+    borderRadius: 3/2,
+    left: 275,
   },
 
 
