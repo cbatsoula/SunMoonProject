@@ -9,6 +9,8 @@ export default class App extends Component {
     zipcode: 11230,
     weatherData: null,
     fadeAnim: new Animated.Value(0),
+    starBigger: 6,
+    starBiggerRadius: 8/2,
   }
 
   _onPressButton() {
@@ -51,9 +53,13 @@ export default class App extends Component {
       <LinearGradient style={styles.lG}
         colors={['cornflowerblue', 'darkorchid', 'darkslategrey']}>
 
+
       <Animated.View
         style={[ styles.starLeft,
           { opacity: this.state.fadeAnim,
+            height: this.state.starBigger,
+            width: this.state.starBigger,
+            borderRadius: this.state.starBiggerRadius,
             transform: [{
       translateY: this.state.fadeAnim.interpolate({
         inputRange: [0, 1],
@@ -133,7 +139,7 @@ const styles = StyleSheet.create({
     height: 3,
     width: 3,
     backgroundColor: 'tomato',
-    zIndex: 1,
+    zIndex: 5,
     borderRadius: 3/2,
     margin: 5,
   },
@@ -141,93 +147,23 @@ const styles = StyleSheet.create({
     height: 3,
     width: 3,
     backgroundColor: 'ghostwhite',
-    zIndex: 1,
+    zIndex: 5,
     borderRadius: 3/2,
     left: 275,
   },
-
-
-
-
-
-
-
-
-
-
-
-starfive: {
-  width: 150,
-  height: 150,
-},
-starfiveTop: {
-  position: 'absolute',
-  top: -45,
-  left: 37
-},
-starfiveBefore: {
-  backgroundColor: 'transparent',
-  position: 'absolute',
-  left: 0,
-  top: 0,
-  borderStyle: 'solid',
-  borderRightWidth: 100,
-  borderRightColor: 'transparent',
-  borderBottomWidth: 70,
-  borderBottomColor: 'red',
-  borderLeftWidth: 100,
-  borderLeftColor: 'transparent',
-  transform: [
-    { rotate: '35deg'}
-  ]
-},
-starfiveAfter: {
-  backgroundColor: 'transparent',
-  position: 'absolute',
-  top: 0,
-  left: -25,
-  width: 0,
-  height: 0,
-  borderStyle: 'solid',
-  borderRightWidth: 100,
-  borderRightColor: 'transparent',
-  borderBottomWidth: 70,
-  borderBottomColor: 'red',
-  borderLeftWidth: 100,
-  borderLeftColor: 'transparent',
-  transform: [
-    { rotate: '-35deg'}
-  ]
-},
-triangleUp: {
-  width: 0,
-  height: 0,
-  backgroundColor: 'transparent',
-  borderStyle: 'solid',
-  borderLeftWidth: 50,
-  borderRightWidth: 50,
-  borderBottomWidth: 100,
-  borderLeftColor: 'transparent',
-  borderRightColor: 'transparent',
-  borderBottomColor: 'red'
-},
-
-
-
-
-fadingContainer: {
-  paddingVertical: 8,
-  paddingHorizontal: 16,
-  backgroundColor: "powderblue"
-},
-fadingText: {
-  fontSize: 28,
-  textAlign: "center",
-  margin: 10
-},
-buttonRow: {
-  flexDirection: "row",
-  marginVertical: 16,
+  fadingContainer: {
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    backgroundColor: "powderblue"
+  },
+  fadingText: {
+    fontSize: 28,
+    textAlign: "center",
+    margin: 10
+  },
+  buttonRow: {
+    flexDirection: "row",
+    marginVertical: 16,
 
 },
 });
