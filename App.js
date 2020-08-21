@@ -53,8 +53,14 @@ export default class App extends Component {
 
       <Animated.View
         style={[ styles.starLeft,
-          { opacity: this.state.fadeAnim }
-        ]}>
+          { opacity: this.state.fadeAnim,
+            transform: [{
+      translateY: this.state.fadeAnim.interpolate({
+        inputRange: [0, 1],
+        outputRange: [5, 0]  // 0 : 150, 0.5 : 75, 1 : 0
+      }),
+    }],
+  }]}>
         <View style={styles.starRight} />
       </Animated.View>
       <View style={styles.buttonRow}>
