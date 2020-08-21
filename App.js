@@ -19,16 +19,16 @@ export default class App extends Component {
   // Will change fadeAnim value to 1 in 5 seconds
   Animated.timing(this.state.fadeAnim, {
     toValue: 1,
-    duration: 5000
-  }).start();
+    duration: 500
+  }).start(() => {this.fadeOut()});
   };
 
   fadeOut = () => {
     // Will change fadeAnim value to 0 in 5 seconds
     Animated.timing(this.state.fadeAnim, {
       toValue: 0,
-      duration: 5000
-    }).start();
+      duration: 500
+    }).start( () => {this.fadeIn()});
   };
 
 
@@ -50,17 +50,15 @@ export default class App extends Component {
 
       <LinearGradient style={styles.lG}
         colors={['cornflowerblue', 'darkorchid', 'darkslategrey']}>
-      <View style={styles.starLeft} />
 
       <Animated.View
         style={[
-          styles.fadingContainer,
+          styles.starLeft,
           {
             opacity: this.state.fadeAnim // Bind opacity to animated value
           }
-        ]}
-      >
-        <Text style={styles.fadingText}>Fading View!</Text>
+        ]}>
+        <View style={styles.starRight} />
       </Animated.View>
       <View style={styles.buttonRow}>
         <Button title="Fade In" onPress={this.fadeIn} />
@@ -72,7 +70,7 @@ export default class App extends Component {
         <Button
           style={styles.button}
           color='firebrick'
-          onPress={this._onPressButton}
+          onPress={this.fadeIn}
           title="LOG IN"/>
         <Button
           style={styles.button}
