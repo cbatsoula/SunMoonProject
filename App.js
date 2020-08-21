@@ -61,13 +61,27 @@ export default class App extends Component {
             width: this.state.starBigger,
             borderRadius: this.state.starBiggerRadius,
             transform: [{
-      translateY: this.state.fadeAnim.interpolate({
-        inputRange: [0, 1],
-        outputRange: [5, 0]  // 0 : 150, 0.5 : 75, 1 : 0
-      }),
-    }],
-  }]}>
-        <View style={styles.starRight} />
+              translateY: this.state.fadeAnim.interpolate({
+                inputRange: [0, 1],
+                outputRange: [5, 0]  // 0 : 150, 0.5 : 75, 1 : 0
+              }),
+            }],
+          }]}>
+      </Animated.View>
+
+      <Animated.View
+        style={[ styles.starRight,
+          { opacity: this.state.fadeAnim,
+            height: this.state.starBigger,
+            width: this.state.starBigger,
+            borderRadius: this.state.starBiggerRadius,
+            transform: [{
+              translateY: this.state.fadeAnim.interpolate({
+                inputRange: [0, 1],
+                outputRange: [5, 0]  // 0 : 150, 0.5 : 75, 1 : 0
+              }),
+            }],
+          }]}>
       </Animated.View>
       <View style={styles.buttonRow}>
         <Button title="Twinkle 'em " onPress={this.fadeIn} />
@@ -88,7 +102,37 @@ export default class App extends Component {
       </View>
 
       <View style={styles.starRight} />
-      <View style={styles.starLeft} />
+      <View style={styles.starRight} />
+      <Animated.View
+        style={[ styles.starRight,
+          { opacity: this.state.fadeAnim,
+            height: this.state.starBigger,
+            width: this.state.starBigger,
+            borderRadius: this.state.starBiggerRadius,
+            transform: [{
+              translateY: this.state.fadeAnim.interpolate({
+                inputRange: [0, 1],
+                outputRange: [5, 0]  // 0 : 150, 0.5 : 75, 1 : 0
+              }),
+            }],
+          }]}>
+      </Animated.View>
+
+
+      <Animated.View
+        style={[ styles.starLeft,
+          { opacity: this.state.fadeAnim,
+            height: this.state.starBigger,
+            width: this.state.starBigger,
+            borderRadius: this.state.starBiggerRadius,
+            transform: [{
+              translateY: this.state.fadeAnim.interpolate({
+                inputRange: [0, 1],
+                outputRange: [5, 0]  // 0 : 150, 0.5 : 75, 1 : 0
+              }),
+            }],
+          }]}>
+      </Animated.View>
 
 
       <View style={styles.starRight} />
