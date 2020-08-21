@@ -52,17 +52,13 @@ export default class App extends Component {
         colors={['cornflowerblue', 'darkorchid', 'darkslategrey']}>
 
       <Animated.View
-        style={[
-          styles.starLeft,
-          {
-            opacity: this.state.fadeAnim // Bind opacity to animated value
-          }
+        style={[ styles.starLeft,
+          { opacity: this.state.fadeAnim }
         ]}>
         <View style={styles.starRight} />
       </Animated.View>
       <View style={styles.buttonRow}>
-        <Button title="Fade In" onPress={this.fadeIn} />
-        <Button title="Fade Out" onPress={this.fadeOut} />
+        <Button title="Twinkle 'em " onPress={this.fadeIn} />
       </View>
 
       <View style={styles.starRight} />
@@ -81,6 +77,8 @@ export default class App extends Component {
 
       <View style={styles.starRight} />
       <View style={styles.starLeft} />
+
+
       <View style={styles.starRight} />
 
       </LinearGradient>
@@ -223,6 +221,7 @@ fadingText: {
 },
 buttonRow: {
   flexDirection: "row",
-  marginVertical: 16
+  marginVertical: 16,
+
 },
 });
